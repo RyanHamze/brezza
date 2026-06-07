@@ -18,7 +18,7 @@ Credit to [@joncar](https://github.com/joncar/ha-fpa) for the original Baby Brez
 
 [![Open your Home Assistant scripts.](https://my.home-assistant.io/badges/scripts.svg)](https://my.home-assistant.io/redirect/scripts/)
 
-[![Open your Home Assistant dashboards.](https://my.home-assistant.io/badges/lovelace_dashboards.svg)](https://my.home-assistant.io/redirect/lovelace_dashboards/)
+[![Open your Home Assistant overview dashboard.](https://my.home-assistant.io/badges/overview.svg)](https://my.home-assistant.io/redirect/overview/)
 
 These buttons open the right page in your own Home Assistant instance. They do not make changes automatically, so you still need to confirm downloads, enter credentials, create scripts, expose entities, and add dashboard cards yourself.
 
@@ -136,7 +136,7 @@ tap_action:
     bottle_id: 1
 ```
 
-If your Home Assistant version uses the older Lovelace action syntax, use:
+If your Home Assistant version uses the older dashboard action syntax, use:
 
 ```yaml
 tap_action:
@@ -156,7 +156,7 @@ No. My Home Assistant links are navigation shortcuts. They can open the right pa
 
 ### Google Assistant sees my other Home Assistant devices, but not Make Bottle.
 
-Make sure **Make Bottle** is a Home Assistant script, not only a dashboard button. Google Assistant cannot press Lovelace dashboard buttons.
+Make sure **Make Bottle** is a Home Assistant script, not only a dashboard button. Google Assistant cannot press Home Assistant dashboard buttons.
 
 Then check these settings:
 
