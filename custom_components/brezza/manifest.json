@@ -1,0 +1,15 @@
+{
+  "domain": "brezza",
+  "name": "Brezza",
+  "codeowners": ["@RyanHamze"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/RyanHamze/brezza",
+  "homekit": {},
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/RyanHamze/brezza/issues",
+  "requirements": ["pybabyfpa==0.0.7"],
+  "ssdp": [],
+  "version": "1.0.0",
+  "zeroconf": []
+}
