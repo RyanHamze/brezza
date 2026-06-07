@@ -1,0 +1,11 @@
+make_bottle:
+  alias: "Make Bottle"
+  description: "Tell Brezza to start making a bottle. Safe to call from Google or Alexa routines."
+  sequence:
+    - service: brezza.make_bottle
+      target:
+        entity_id: sensor.brezza    # replace with your entity id if different
+      data:
+        bottle_id: 1                # replace with your bottle preset number
+  mode: single
+  icon: mdi:baby-bottle
