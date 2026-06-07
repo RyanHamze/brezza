@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Brezza",
+        "description": "Enter the same email and password you use in the Baby Brezza app.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach Baby Brezza servers. Check your network.",
+      "invalid_auth": "Wrong email or password.",
+      "unknown": "Unexpected error. Check the Home Assistant logs."
+    },
+    "abort": {
+      "already_configured": "Brezza is already set up."
+    }
+  }
+}
