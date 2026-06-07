@@ -6,6 +6,22 @@ This integration creates a sensor for your Baby Brezza machine and exposes servi
 
 Credit to [@joncar](https://github.com/joncar/ha-fpa) for the original Baby Brezza cloud API research.
 
+## Quick Links
+
+[![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=RyanHamze&repository=brezza&category=integration)
+
+[![Open your Home Assistant instance and start setting up Brezza.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=brezza)
+
+[![Open your Home Assistant Cloud settings.](https://my.home-assistant.io/badges/cloud.svg)](https://my.home-assistant.io/redirect/cloud/)
+
+[![Open your Home Assistant voice assistants settings.](https://my.home-assistant.io/badges/voice_assistants.svg)](https://my.home-assistant.io/redirect/voice_assistants/)
+
+[![Open your Home Assistant scripts.](https://my.home-assistant.io/badges/scripts.svg)](https://my.home-assistant.io/redirect/scripts/)
+
+[![Open your Home Assistant dashboards.](https://my.home-assistant.io/badges/lovelace_dashboards.svg)](https://my.home-assistant.io/redirect/lovelace_dashboards/)
+
+These buttons open the right page in your own Home Assistant instance. They do not make changes automatically, so you still need to confirm downloads, enter credentials, create scripts, expose entities, and add dashboard cards yourself.
+
 ## Installation With HACS
 
 1. In Home Assistant, open HACS.
@@ -99,7 +115,44 @@ See [example_script.yaml](example_script.yaml).
 
 Update the `entity_id` and `bottle_id` after installation.
 
+## Dashboard Button
+
+Create a Home Assistant dashboard button and use your own `entity_id` and `bottle_id`:
+
+```yaml
+show_name: true
+show_icon: true
+show_state: true
+type: button
+entity: sensor.brezza
+name: Make Bottle
+icon: mdi:baby-bottle
+tap_action:
+  action: perform-action
+  perform_action: brezza.make_bottle
+  target:
+    entity_id: sensor.brezza
+  data:
+    bottle_id: 1
+```
+
+If your Home Assistant version uses the older Lovelace action syntax, use:
+
+```yaml
+tap_action:
+  action: call-service
+  service: brezza.make_bottle
+  target:
+    entity_id: sensor.brezza
+  data:
+    bottle_id: 1
+```
+
 ## FAQ
+
+### Can the README buttons create my script, expose Google/Alexa, or add my dashboard button automatically?
+
+No. My Home Assistant links are navigation shortcuts. They can open the right page in your Home Assistant instance, but they do not make configuration changes automatically.
 
 ### Google Assistant sees my other Home Assistant devices, but not Make Bottle.
 
