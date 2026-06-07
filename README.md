@@ -80,11 +80,12 @@ data:
 The easiest path is Home Assistant Cloud / Nabu Casa.
 
 1. Confirm Home Assistant Cloud is active.
-2. Expose the script or entity you want Google Home to see.
-3. Create a Home Assistant script using `brezza.make_bottle`.
-4. Give the script a natural name like **Make Bottle**.
-5. Sync devices in Google Home.
-6. Create a Google Home routine that triggers the Home Assistant script.
+2. Create a Home Assistant script using `brezza.make_bottle`.
+3. Give the script a natural name like **Make Bottle**.
+4. Assign the script to an area, such as **Kitchen**. Google Assistant may not show exposed scripts unless they belong to an area.
+5. Expose the script to Google Assistant under **Settings > Voice assistants > Expose**.
+6. Sync devices in Google Home.
+7. Create a Google Home routine that triggers the Home Assistant script.
 
 Example phrase:
 
@@ -97,6 +98,23 @@ Hey Google, make a bottle
 See [example_script.yaml](example_script.yaml).
 
 Update the `entity_id` and `bottle_id` after installation.
+
+## FAQ
+
+### Google Assistant sees my other Home Assistant devices, but not Make Bottle.
+
+Make sure **Make Bottle** is a Home Assistant script, not only a dashboard button. Google Assistant cannot press Lovelace dashboard buttons.
+
+Then check these settings:
+
+1. Go to **Settings > Automations & scenes > Scripts**.
+2. Open the **Make Bottle** script.
+3. Assign it to an area, such as **Kitchen**.
+4. Go to **Settings > Voice assistants > Expose**.
+5. Expose the `script.make_bottle` entity to Google Assistant.
+6. Say, "Hey Google, sync my devices."
+
+After syncing, try "Hey Google, turn on Make Bottle" or create a Google Home routine with the phrase "make a bottle."
 
 ## Notes
 
