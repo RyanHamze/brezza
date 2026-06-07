@@ -1,0 +1,43 @@
+make_bottle:
+  name: Make Bottle
+  description: >
+    Start the Brezza machine using a saved bottle preset.
+    The machine must be in the "ready" state or the call will be ignored.
+  target:
+    entity:
+      domain: sensor
+      integration: brezza
+  fields:
+    bottle_id:
+      name: Bottle ID
+      description: >
+        The preset number to use. Check the sensor attributes after setup -
+        you will see entries like bottle_1, bottle_2. Use the number only.
+      required: true
+      example: 1
+      selector:
+        number:
+          min: 1
+          max: 99
+          mode: box
+
+turn_on:
+  name: Turn On
+  description: >
+    Alias for make_bottle. Used by Google Home and Alexa routines
+    that call turn_on on the entity.
+  target:
+    entity:
+      domain: sensor
+      integration: brezza
+  fields:
+    bottle_id:
+      name: Bottle ID
+      description: The preset number to use.
+      required: true
+      example: 1
+      selector:
+        number:
+          min: 1
+          max: 99
+          mode: box
